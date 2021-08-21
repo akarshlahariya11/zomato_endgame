@@ -1,17 +1,17 @@
 import { FoodModel } from "./food";
-import { MenuModel } from "./menu";
 import { ImageModel } from "./image";
-import { UserModel } from "./user";
+import { MenuModel } from "./menu";
+import { OrderModel } from "./order";
 import { RestaurantModel } from "./restaurant";
 import { ReviewModel } from "./reviews";
-import { OrderModel } from "./order";
+import { UserModel } from "./user";
 
 export {
-    FoodModel,
-    RestaurantModel,
-    OrderModel,
-    UserModel,
-    ReviewModel,
-    ImageModel,
-    MenuModel,
-}
+  FoodModel,
+  ImageModel,
+  MenuModel,
+  OrderModel,
+  RestaurantModel,
+  ReviewModel,
+  UserModel,
+};

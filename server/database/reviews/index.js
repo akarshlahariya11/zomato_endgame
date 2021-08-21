@@ -1,20 +1,22 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const reviewSchema = new mongoose.Schema({
+const ReviewSchema = mongoose.Schema(
+  {
     food: { type: mongoose.Types.ObjectId, ref: "Foods" },
-    restaurnat: { type: mongoose.Types.ObjectId, ref: "Restaurants" },
+    restaurant: { type: mongoose.Types.ObjectId, ref: "Restaurants" },
     user: { type: mongoose.Types.ObjectId, ref: "Users" },
     rating: { type: Number, required: true },
-    reviewText: { type: String },
-    photos: [{
+    reviewText: { type: String, required: true },
+    photos: [
+      {
         type: mongoose.Types.ObjectId,
-        ref: "Images", 
-    }],
+        ref: "Images",
+      },
+    ],
   },
-    {
-        timestamps: true,
-    }
+  {
+    timestamps: true,
+  }
 );
-
 
 export const ReviewModel = mongoose.model("Reviews", ReviewSchema);
