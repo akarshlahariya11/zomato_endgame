@@ -1,16 +1,22 @@
 import mongoose from "mongoose";
 
-const ReviewSchema = mongoose.Schema(
+const OrderSchema = new mongoose.Schema(
   {
-    food: { type: mongoose.Types.ObjectId, ref: "Foods" },
-    restaurant: { type: mongoose.Types.ObjectId, ref: "Restaurants" },
-    user: { type: mongoose.Types.ObjectId, ref: "Users" },
-    rating: { type: Number, required: true },
-    reviewText: { type: String, required: true },
-    photos: [
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "Users",
+    },
+    orderDetails: [
       {
-        type: mongoose.Types.ObjectId,
-        ref: "Images",
+        food: { type: mongoose.Types.ObjectId, ref: "Foods" },
+        quantity: { type: Number, required: true },
+        paymode: { type: String, required: true },
+        status: { type: String, default: "Placed" },
+        paymentDetails: {
+          itemTotal: { type: Number, required: true },
+          promo: { type: Number, required: true },
+          tax: { type: Number, required: true },
+        },
       },
     ],
   },
@@ -19,4 +25,4 @@ const ReviewSchema = mongoose.Schema(
   }
 );
 
-export const ReviewModel = mongoose.model("Reviews", ReviewSchema);
+export const OrderModel = mongoose.model("Orders", OrderSchema);

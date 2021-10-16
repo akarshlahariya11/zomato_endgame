@@ -46,7 +46,7 @@ const LargeNav = () => {
                     </a>
 
                     {/* location & search  */}
-                    <div className=" w-3/4 flex gap-3 shadow-md items-center bg-white w-full p-3 border border-gray-200 rounded">
+                    <div className=" w-3/4 flex gap-3  items-center bg-white w-full p-3 border border-gray-200 rounded">
                         <div className="flex items-center gap-2 border-r-2 border-gray-300 pr-1">
                             <span className="text-zomato-400">
                                 <IoLocation />
